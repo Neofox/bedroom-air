@@ -1,0 +1,16 @@
+[Unit]
+Description=Bedroom air history
+Wants=network-online.target systemd-time-wait-sync.service
+After=network-online.target systemd-time-wait-sync.service
+
+[Service]
+DynamicUser=yes
+StateDirectory=bedroom-air
+StateDirectoryMode=0750
+ExecStart=/usr/local/bin/bedroom-air-history -db /var/lib/bedroom-air/readings.sqlite
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

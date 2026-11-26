@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="858" viewBox="0 0 1320 858"><title>Pin-by-pin wiring for the ESP32 and both sensors</title><rect x="0" y="0" width="1320" height="858" rx="0" fill="#F6F6EF" stroke="none" stroke-width="2"/><text x="42" y="78" font-family="Helvetica Neue, Arial, sans-serif" font-size="55" font-weight="700" fill="#173B34" text-anchor="start">Wire the two sensors</text>
+<text x="42" y="124" font-family="Helvetica Neue, Arial, sans-serif" font-size="25" font-weight="400" fill="#475F56" text-anchor="start">ESP32-WROOM-32 USB-C board  /  MH-Z19C cable  /  DHT22 breakout</text>
+<path d="M42 154H1278" fill="none" stroke="#BDC9BE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="42" y="194" width="458" height="458" rx="18" fill="#FFFFFA" stroke="#BDC9BE" stroke-width="2"/>
+<text x="70" y="235" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" fill="#196B56" text-anchor="start" letter-spacing="1.6">BEDROOM CONTROLLER</text>
+<text x="70" y="280" font-family="Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="700" fill="#173B34" text-anchor="start">ESP32-WROOM-32</text>
+<text x="70" y="316" font-family="Helvetica Neue, Arial, sans-serif" font-size="21" font-weight="400" fill="#475F56" text-anchor="start">USB service: open JP1.</text>
+<rect x="796" y="194" width="482" height="250" rx="18" fill="#FFFFFA" stroke="#BDC9BE" stroke-width="2"/>
+<text x="823" y="232" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" fill="#196B56" text-anchor="start" letter-spacing="1.6">CO₂   /   7-PIN CONNECTOR</text>
+<text x="823" y="276" font-family="Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="700" fill="#173B34" text-anchor="start">MH-Z19C</text>
+<rect x="796" y="464" width="482" height="188" rx="18" fill="#FFFFFA" stroke="#BDC9BE" stroke-width="2"/>
+<text x="823" y="502" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" fill="#196B56" text-anchor="start" letter-spacing="1.6">TEMPERATURE + HUMIDITY</text>
+<text x="823" y="541" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="700" fill="#173B34" text-anchor="start">DHT22 breakout</text>
+<path d="M500 335H796" fill="none" stroke="#9B4D2F" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="500" cy="335" r="5" fill="#FFFFFA" stroke="#9B4D2F" stroke-width="2"/>
+<circle cx="796" cy="335" r="5" fill="#FFFFFA" stroke="#9B4D2F" stroke-width="2"/>
+<text x="477" y="342" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="end">J4  5 V*</text>
+<text x="819" y="342" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="start">Pin 4  ·  VIN</text>
+<path d="M500 365H796" fill="none" stroke="#475F56" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="500" cy="365" r="5" fill="#FFFFFA" stroke="#475F56" stroke-width="2"/>
+<circle cx="796" cy="365" r="5" fill="#FFFFFA" stroke="#475F56" stroke-width="2"/>
+<text x="477" y="372" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="end">GND</text>
+<text x="819" y="372" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="start">Pin 3  ·  GND</text>
+<path d="M500 395H796" fill="none" stroke="#315E87" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="500" cy="395" r="5" fill="#FFFFFA" stroke="#315E87" stroke-width="2"/>
+<circle cx="796" cy="395" r="5" fill="#FFFFFA" stroke="#315E87" stroke-width="2"/>
+<text x="477" y="402" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="end">GPIO16  ·  RX</text>
+<text x="819" y="402" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="start">Pin 6  ·  TXD</text>
+<path d="M500 425H796" fill="none" stroke="#18756B" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="500" cy="425" r="5" fill="#FFFFFA" stroke="#18756B" stroke-width="2"/>
+<circle cx="796" cy="425" r="5" fill="#FFFFFA" stroke="#18756B" stroke-width="2"/>
+<text x="477" y="432" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="end">GPIO17  ·  TX</text>
+<text x="819" y="432" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="start">Pin 5  ·  RXD</text>
+<path d="M500 567H796" fill="none" stroke="#85621F" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="500" cy="567" r="5" fill="#FFFFFA" stroke="#85621F" stroke-width="2"/>
+<circle cx="796" cy="567" r="5" fill="#FFFFFA" stroke="#85621F" stroke-width="2"/>
+<text x="477" y="574" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="end">3V3</text>
+<text x="819" y="574" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="start">VCC  /  +</text>
+<path d="M500 598H796" fill="none" stroke="#18756B" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="500" cy="598" r="5" fill="#FFFFFA" stroke="#18756B" stroke-width="2"/>
+<circle cx="796" cy="598" r="5" fill="#FFFFFA" stroke="#18756B" stroke-width="2"/>
+<text x="477" y="605" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="end">GPIO18</text>
+<text x="819" y="605" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="start">DATA  /  OUT</text>
+<path d="M500 629H796" fill="none" stroke="#475F56" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="500" cy="629" r="5" fill="#FFFFFA" stroke="#475F56" stroke-width="2"/>
+<circle cx="796" cy="629" r="5" fill="#FFFFFA" stroke="#475F56" stroke-width="2"/>
+<text x="477" y="636" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="end">GND</text>
+<text x="819" y="636" font-family="Menlo, monospace" font-size="22" font-weight="400" fill="#173B34" text-anchor="start">GND  /  −</text>
+<text x="70" y="403" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="700" fill="#475F56" text-anchor="start">3.3 V UART</text>
+<text x="70" y="428" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="400" fill="#475F56" text-anchor="start">9600 baud · 8N1</text>
+<path d="M70 481H475" fill="none" stroke="#BDC9BE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="70" y="601" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="700" fill="#475F56" text-anchor="start">Digital data</text>
+<path d="M42 694H1278" fill="none" stroke="#BDC9BE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="42" y="739" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700" fill="#173B34" text-anchor="start">Before power-up</text>
+<text x="42" y="781" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">* Verify 4.9–5.1 V at the sensor. Use a common ground. Follow the connector orientation in Winsen Fig. 4.</text>
+<text x="42" y="819" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">Follow the DHT22 breakout labels. If it lacks a pull-up, add 10 kΩ between DATA and 3V3.</text></svg>

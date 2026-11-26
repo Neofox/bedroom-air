@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f4ef"><title>Bedroom air · Room monitor</title>
+<link rel="stylesheet" href="/assets/monitor.css"><link rel="stylesheet" href="/assets/insights.css">
+<script defer src="/assets/monitor.js"></script><script defer src="/assets/insights.js"></script>
+</head><body><main>
+<header class="top"><div class="brand"><span class="brandmark" aria-hidden="true"><i></i><i></i><i></i></span>Air monitor</div><span class="connection" id="connection" role="status"><i></i><span>Connecting</span></span></header>
+<div class="title"><h1>Bedroom</h1><span class="date" id="today"></span></div>
+<nav class="view-nav" aria-label="Bedroom views"><a href="#live" aria-current="page">Live</a><a href="#last-night">Last night</a><a href="#airing">Airing out</a></nav>
+<div id="live-view">
+<section class="hero" aria-label="Current carbon dioxide">
+ <div class="hero-copy"><h2 class="metric-label">Carbon dioxide</h2>
+ <div class="value"><strong id="co2">—</strong><span>ppm</span></div>
+ <span class="trend" id="trend">Waiting for sensor</span></div>
+ <div class="instrument"><canvas id="dial" role="img" aria-label="Current CO₂ level on a 400 to 2500 ppm scale"></canvas></div>
+</section>
+<div class="metrics">
+ <section class="metric temp"><span class="symbol" aria-hidden="true"><canvas data-icon="temp"></canvas></span><h2>Temperature</h2><p><b id="temp">—</b> <small>°C</small></p></section>
+ <section class="metric hum"><span class="symbol" aria-hidden="true"><canvas data-icon="rh"></canvas></span><h2>Humidity</h2><p><b id="rh">—</b> <small>%</small></p></section>
+ <section class="metric light"><span class="symbol" aria-hidden="true"><canvas data-icon="light"></canvas></span><h2>Room light</h2><p><b id="lux">—</b> <small>lx</small></p><span id="light-status"></span></section>
+</div>
+<section class="history">
+ <div class="chart-head"><div><h2>History</h2><p id="period-caption"></p></div>
+ <div class="period-control"><select id="period" aria-label="History period"><option value="0.5">30 minutes</option><option value="1">1 hour</option><option value="12">12 hours</option><option value="24">24 hours</option><option value="night">Choose a night</option></select><input hidden type="date" id="night" aria-label="Night starting date"></div></div>
+ <div class="tabs" role="group" aria-label="Chart measurement"><button data-metric="co2" aria-pressed="true">CO₂</button><button data-metric="temperature" aria-pressed="false">Temperature</button><button data-metric="humidity" aria-pressed="false">Humidity</button><button data-metric="lux" aria-pressed="false">Light</button></div>
+ <div id="plot-wrap"><canvas id="plot" tabindex="0" aria-label="Interactive chart. Touch or use the arrow keys to inspect a saved reading."></canvas><div id="tip" hidden></div><div class="empty" id="empty" hidden></div></div>
+ <div class="summary"><div><span>Lowest</span><b id="low">—</b></div><div><span>Average</span><b id="avg">—</b></div><div><span>Highest</span><b id="high">—</b></div></div>
+</section>
+<footer><span id="record-status">Loading saved readings…</span><a href="http://bedroom-air.local/">Sensor page ↗</a></footer>
+</div>
+<section id="night-view" class="report" hidden aria-labelledby="night-title">
+ <div class="report-head"><div><h2 id="night-title">Last night</h2><p id="night-dates">20:00–08:00 at the monitor</p></div>
+ <div class="report-controls"><select id="night-pick" aria-label="Overnight report"><option value="last">Last night</option><option value="latest">Latest night</option><option value="date">Choose a date</option></select><input hidden type="date" id="report-date" aria-label="Night starting date"></div></div>
+ <p id="night-message" class="notice" role="status">Loading the night…</p>
+ <div id="night-data" hidden>
+  <div class="night-hero"><div class="peak-head"><div><h3>Peak CO₂</h3><strong id="night-peak"></strong><span class="peak-unit"> ppm</span></div><p id="night-peak-time"></p></div>
+    <canvas id="night-line" role="img" aria-label="Overnight CO₂ trend"></canvas></div>
+  <div class="night-metrics">
+   <section><h3>Time at or above</h3><select id="night-threshold" aria-label="CO₂ threshold"><option value="800">800 ppm</option><option value="1000">1,000 ppm</option><option value="1200">1,200 ppm</option><option value="1500" selected>1,500 ppm</option><option value="2000">2,000 ppm</option></select><strong id="night-above"></strong></section>
+   <section><h3>CO₂ coverage</h3><strong id="night-coverage"></strong><span id="night-elapsed"></span></section>
+  </div>
+  <div class="comparison"><h3>Compared with last week</h3><p id="night-week"></p></div>
+ </div>
+ <a id="tonight-shortcut" class="report-link" href="#tonight" hidden>See tonight so far ↗</a>
+</section>
+<section id="airing-view" class="report" hidden aria-labelledby="airing-title">
+ <div class="report-head"><div><h2 id="airing-title">Airing out</h2><p>CO₂ drops and the change in room temperature</p></div>
+ <select id="airing-range" aria-label="Airing history period"><option value="24">Past 24 hours</option><option value="168">Past 7 days</option></select></div>
+ <p id="airing-message" class="notice" role="status">Checking the readings…</p>
+ <div id="airing-data" hidden><div class="airing-lead"><h3>Sustained CO₂ drops</h3><strong id="airing-count"></strong><p id="airing-covered"></p></div><div id="airing-events"></div></div>
+ <details class="method"><summary>How a drop is identified</summary><p>A drop of at least 150 ppm over 5–30 minutes with several falling readings counts as a possible airing. A door opening or someone leaving can produce a similar pattern. Gaps split the record.</p><p>Cooling compares the temperature at the start with its lowest reading during the drop. After a cooling of at least 0.3 °C, the Pi looks for three consecutive readings back within 0.2 °C of the starting temperature or warmer, for up to two hours.</p></details>
+</section>
+</main></body></html>

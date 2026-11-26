@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>Bedroom-Air.kicad_sch</source>
+    <date>2026-11-26T22:19:45</date>
+    <tool>Eeschema 10.0.8</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Bedroom Air | Sensor carrier</title>
+        <company/>
+        <rev>A</rev>
+        <date>2026-11-26</date>
+        <source>Bedroom-Air.kicad_sch</source>
+        <comment number="1" value="USB at left on the assembled carrier. Sensor signal names follow the sensor."/>
+        <comment number="2" value="J7 regulated 5 V. Remove JP1 before attaching a computer USB cable with J7 powered."/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>100 uF / 10 V or higher</value>
+      <footprint>BedroomAir:Cap_radial_D6.3_P2.5</footprint>
+      <fields>
+        <field name="Footprint">BedroomAir:Cap_radial_D6.3_P2.5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BedroomAir" part="Cap_radial_D6.3_P2.5" description=""/>
+      <property name="Sheetname" value="Bedroom-Air"/>
+      <property name="Sheetfile" value="Bedroom-Air.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>df185b31-49af-5609-b2b4-5be49c07aab3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>100 nF</value>
+      <footprint>BedroomAir:Cap_disc_P2.5</footprint>
+      <fields>
+        <field name="Footprint">BedroomAir:Cap_disc_P2.5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BedroomAir" part="Cap_disc_P2.5" description=""/>
+      <property name="Sheetname" value="Bedroom-Air"/>
+      <property name="Sheetfile" value="Bedroom-Air.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ad9e712f-c4e2-5d1f-9f96-ab715de86e73</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J4">
+      <value>MH-Z19C harness</value>
+      <footprint>BedroomAir:Terminal_4P_5mm</footprint>
+      <fields>
+        <field name="Footprint">BedroomAir:Terminal_4P_5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BedroomAir" part="Terminal_4P_5mm" description=""/>
+      <property name="Sheetname" value="Bedroom-Air"/>
+      <property name="Sheetfile" value="Bedroom-Air.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2a4d9190-e2d3-5990-8f83-f9533dc70ec1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J5">
+      <value>DHT22 breakout</value>
+      <footprint>BedroomAir:Terminal_3P_5mm</footprint>
+      <fields>
+        <field name="Footprint">BedroomAir:Terminal_3P_5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BedroomAir" part="Terminal_3P_5mm" description=""/>
+      <property name="Sheetname" value="Bedroom-Air"/>
+      <property name="Sheetfile" value="Bedroom-Air.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bfa88337-2fc8-5c0e-a142-8b7da26fcbbe</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J6">
+      <value>GY-302 BH1750 / optional</value>
+      <footprint>BedroomAir:GY302_5P</footprint>
+      <fields>
+        <field name="Footprint">BedroomAir:GY302_5P</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BedroomAir" part="GY302_5P" description=""/>
+      <property name="Sheetname" value="Bedroom-Air"/>
+      <property name="Sheetfile" value="Bedroom-Air.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3570b5bc-5f57-52e1-a1e8-18b8d55cfe8a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J7">
+      <value>Regulated DC input</value>
+      <footprint>BedroomAir:Terminal_2P_5mm</footprint>
+      <fields>
+        <field name="Footprint">BedroomAir:Terminal_2P_5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BedroomAir" part="Terminal_2P_5mm" description=""/>
+      <property name="Sheetname" value="Bedroom-Air"/>
+      <property name="Sheetfile" value="Bedroom-Air.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>db86a1e1-fef9-5cbc-a87f-0a9e92d86f8b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JP1">
+      <value>RUN shunt</value>
+      <footprint>BedroomAir:Shunt_1x02</footprint>
+      <fields>
+        <field name="Footprint">BedroomAir:Shunt_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BedroomAir" part="Shunt_1x02" description=""/>
+      <property name="Sheetname" value="Bedroom-Air"/>
+      <property name="Sheetfile" value="Bedroom-Air.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5ab78120-50dd-5dbe-b244-6c1518a56157</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>10k / optional DHT pull-up</value>
+      <footprint>BedroomAir:Resistor_axial_P7.62</footprint>
+      <fields>
+        <field name="Footprint">BedroomAir:Resistor_axial_P7.62</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BedroomAir" part="Resistor_axial_P7.62" description=""/>
+      <property name="Sheetname" value="Bedroom-Air"/>
+      <property name="Sheetfile" value="Bedroom-Air.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6cc514a7-77a4-5aa9-beba-9f9bcc86d0f5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>ESP32 WROOM-32 / 30-pin</value>
+      <footprint>BedroomAir:ESP32_30_DualWidth</footprint>
+      <fields>
+        <field name="Footprint">BedroomAir:ESP32_30_DualWidth</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="BedroomAir" part="ESP32_30_DualWidth" description=""/>
+      <property name="Sheetname" value="Bedroom-Air"/>
+      <property name="Sheetfile" value="Bedroom-Air.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1e7518c4-7e77-53e2-8152-7d3627d48964</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="18"/>
+            <pin num="19"/>
+            <pin num="20"/>
+            <pin num="23"/>
+            <pin num="25"/>
+            <pin num="27"/>
+            <pin num="28"/>
+            <pin num="30"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="16"/>
+            <pin num="17"/>
+            <pin num="21"/>
+            <pin num="22"/>
+            <pin num="24"/>
+            <pin num="26"/>
+            <pin num="29"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="BedroomAir" part="Cap_disc_P2.5">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">Cap_disc_P2.5</field>
+        <field name="Footprint">BedroomAir:Cap_disc_P2.5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BedroomAir" part="Cap_radial_D6.3_P2.5">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">Cap_radial_D6.3_P2.5</field>
+        <field name="Footprint">BedroomAir:Cap_radial_D6.3_P2.5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BedroomAir" part="ESP32_30_DualWidth">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESP32_30_DualWidth</field>
+        <field name="Footprint">BedroomAir:ESP32_30_DualWidth</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="D13" type="passive"/>
+        <pin num="4" name="D12" type="passive"/>
+        <pin num="5" name="D14" type="passive"/>
+        <pin num="6" name="D27" type="passive"/>
+        <pin num="7" name="D26" type="passive"/>
+        <pin num="8" name="D25" type="passive"/>
+        <pin num="9" name="D33" type="passive"/>
+        <pin num="10" name="D32" type="passive"/>
+        <pin num="11" name="D35" type="passive"/>
+        <pin num="12" name="D34" type="passive"/>
+        <pin num="13" name="VN" type="passive"/>
+        <pin num="14" name="VP" type="passive"/>
+        <pin num="15" name="EN" type="passive"/>
+        <pin num="16" name="3V3" type="power_out"/>
+        <pin num="17" name="GND" type="passive"/>
+        <pin num="18" name="D15" type="passive"/>
+        <pin num="19" name="D2" type="passive"/>
+        <pin num="20" name="D4" type="passive"/>
+        <pin num="21" name="D16" type="input"/>
+        <pin num="22" name="D17" type="output"/>
+        <pin num="23" name="D5" type="passive"/>
+        <pin num="24" name="D18" type="bidirectional"/>
+        <pin num="25" name="D19" type="passive"/>
+        <pin num="26" name="D21" type="bidirectional"/>
+        <pin num="27" name="RX0" type="passive"/>
+        <pin num="28" name="TX0" type="passive"/>
+        <pin num="29" name="D22" type="bidirectional"/>
+        <pin num="30" name="D23" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BedroomAir" part="GY302_5P">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">GY302_5P</field>
+        <field name="Footprint">BedroomAir:GY302_5P</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="ADDR" type="passive"/>
+        <pin num="2" name="SDA" type="passive"/>
+        <pin num="3" name="SCL" type="passive"/>
+        <pin num="4" name="GND" type="passive"/>
+        <pin num="5" name="VCC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BedroomAir" part="Resistor_axial_P7.62">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">Resistor_axial_P7.62</field>
+        <field name="Footprint">BedroomAir:Resistor_axial_P7.62</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BedroomAir" part="Shunt_1x02">
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">Shunt_1x02</field>
+        <field name="Footprint">BedroomAir:Shunt_1x02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SYS" type="passive"/>
+        <pin num="2" name="ESP" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BedroomAir" part="Terminal_2P_5mm">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Terminal_2P_5mm</field>
+        <field name="Footprint">BedroomAir:Terminal_2P_5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="+5_V" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BedroomAir" part="Terminal_3P_5mm">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Terminal_3P_5mm</field>
+        <field name="Footprint">BedroomAir:Terminal_3P_5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND_(-)" type="passive"/>
+        <pin num="2" name="OUT" type="passive"/>
+        <pin num="3" name="VCC_(+)" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BedroomAir" part="Terminal_4P_5mm">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Terminal_4P_5mm</field>
+        <field name="Footprint">BedroomAir:Terminal_4P_5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN_(4)" type="passive"/>
+        <pin num="2" name="GND_(3)" type="passive"/>
+        <pin num="3" name="TXD_(6)" type="passive"/>
+        <pin num="4" name="RXD_(5)" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="BedroomAir">
+      <uri>${KIPRJMOD}/BedroomAir.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="3V3" class="Default">
+      <node ref="J5" pin="3" pinfunction="VCC_(+)_3" pintype="passive"/>
+      <node ref="J6" pin="5" pinfunction="VCC_5" pintype="passive"/>
+      <node ref="R1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="3V3_16" pintype="power_out"/>
+    </net>
+    <net code="2" name="5V_SYS" class="Default">
+      <node ref="C1" pin="1" pinfunction="+_1" pintype="passive"/>
+      <node ref="C2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="VIN_(4)_1" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="+5_V_1" pintype="passive"/>
+      <node ref="JP1" pin="1" pinfunction="SYS_1" pintype="passive"/>
+    </net>
+    <net code="3" name="CO2_RX" class="Default">
+      <node ref="J4" pin="4" pinfunction="RXD_(5)_4" pintype="passive"/>
+      <node ref="U1" pin="22" pinfunction="D17_22" pintype="output"/>
+    </net>
+    <net code="4" name="CO2_TX" class="Default">
+      <node ref="J4" pin="3" pinfunction="TXD_(6)_3" pintype="passive"/>
+      <node ref="U1" pin="21" pinfunction="D16_21" pintype="input"/>
+    </net>
+    <net code="5" name="DHT_DATA" class="Default">
+      <node ref="J5" pin="2" pinfunction="OUT_2" pintype="passive"/>
+      <node ref="R1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="24" pinfunction="D18_24" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="GND" class="Default">
+      <node ref="C1" pin="2" pinfunction="-_2" pintype="passive"/>
+      <node ref="C2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="GND_(3)_2" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="GND_(-)_1" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="ADDR_1" pintype="passive"/>
+      <node ref="J6" pin="4" pinfunction="GND_4" pintype="passive"/>
+      <node ref="J7" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="U1" pin="17" pinfunction="GND_17" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND_2" pintype="passive"/>
+    </net>
+    <net code="7" name="I2C_SCL" class="Default">
+      <node ref="J6" pin="3" pinfunction="SCL_3" pintype="passive"/>
+      <node ref="U1" pin="29" pinfunction="D22_29" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="I2C_SDA" class="Default">
+      <node ref="J6" pin="2" pinfunction="SDA_2" pintype="passive"/>
+      <node ref="U1" pin="26" pinfunction="D21_26" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="VIN_ESP" class="Default">
+      <node ref="JP1" pin="2" pinfunction="ESP_2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="VIN_1" pintype="passive"/>
+    </net>
+    <net code="10" name="unconnected-(U1-D2-Pad19)" class="Default">
+      <node ref="U1" pin="19" pinfunction="D2_19" pintype="passive+no_connect"/>
+    </net>
+    <net code="11" name="unconnected-(U1-D4-Pad20)" class="Default">
+      <node ref="U1" pin="20" pinfunction="D4_20" pintype="passive+no_connect"/>
+    </net>
+    <net code="12" name="unconnected-(U1-D5-Pad23)" class="Default">
+      <node ref="U1" pin="23" pinfunction="D5_23" pintype="passive+no_connect"/>
+    </net>
+    <net code="13" name="unconnected-(U1-D12-Pad4)" class="Default">
+      <node ref="U1" pin="4" pinfunction="D12_4" pintype="passive+no_connect"/>
+    </net>
+    <net code="14" name="unconnected-(U1-D13-Pad3)" class="Default">
+      <node ref="U1" pin="3" pinfunction="D13_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="15" name="unconnected-(U1-D14-Pad5)" class="Default">
+      <node ref="U1" pin="5" pinfunction="D14_5" pintype="passive+no_connect"/>
+    </net>
+    <net code="16" name="unconnected-(U1-D15-Pad18)" class="Default">
+      <node ref="U1" pin="18" pinfunction="D15_18" pintype="passive+no_connect"/>
+    </net>
+    <net code="17" name="unconnected-(U1-D19-Pad25)" class="Default">
+      <node ref="U1" pin="25" pinfunction="D19_25" pintype="passive+no_connect"/>
+    </net>
+    <net code="18" name="unconnected-(U1-D23-Pad30)" class="Default">
+      <node ref="U1" pin="30" pinfunction="D23_30" pintype="passive+no_connect"/>
+    </net>
+    <net code="19" name="unconnected-(U1-D25-Pad8)" class="Default">
+      <node ref="U1" pin="8" pinfunction="D25_8" pintype="passive+no_connect"/>
+    </net>
+    <net code="20" name="unconnected-(U1-D26-Pad7)" class="Default">
+      <node ref="U1" pin="7" pinfunction="D26_7" pintype="passive+no_connect"/>
+    </net>
+    <net code="21" name="unconnected-(U1-D27-Pad6)" class="Default">
+      <node ref="U1" pin="6" pinfunction="D27_6" pintype="passive+no_connect"/>
+    </net>
+    <net code="22" name="unconnected-(U1-D32-Pad10)" class="Default">
+      <node ref="U1" pin="10" pinfunction="D32_10" pintype="passive+no_connect"/>
+    </net>
+    <net code="23" name="unconnected-(U1-D33-Pad9)" class="Default">
+      <node ref="U1" pin="9" pinfunction="D33_9" pintype="passive+no_connect"/>
+    </net>
+    <net code="24" name="unconnected-(U1-D34-Pad12)" class="Default">
+      <node ref="U1" pin="12" pinfunction="D34_12" pintype="passive+no_connect"/>
+    </net>
+    <net code="25" name="unconnected-(U1-D35-Pad11)" class="Default">
+      <node ref="U1" pin="11" pinfunction="D35_11" pintype="passive+no_connect"/>
+    </net>
+    <net code="26" name="unconnected-(U1-EN-Pad15)" class="Default">
+      <node ref="U1" pin="15" pinfunction="EN_15" pintype="passive+no_connect"/>
+    </net>
+    <net code="27" name="unconnected-(U1-RX0-Pad27)" class="Default">
+      <node ref="U1" pin="27" pinfunction="RX0_27" pintype="passive+no_connect"/>
+    </net>
+    <net code="28" name="unconnected-(U1-TX0-Pad28)" class="Default">
+      <node ref="U1" pin="28" pinfunction="TX0_28" pintype="passive+no_connect"/>
+    </net>
+    <net code="29" name="unconnected-(U1-VN-Pad13)" class="Default">
+      <node ref="U1" pin="13" pinfunction="VN_13" pintype="passive+no_connect"/>
+    </net>
+    <net code="30" name="unconnected-(U1-VP-Pad14)" class="Default">
+      <node ref="U1" pin="14" pinfunction="VP_14" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>

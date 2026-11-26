@@ -1,0 +1,17 @@
+[Unit]
+Description=Bedroom Air for Apple Home
+Wants=network-online.target bedroom-air.service
+After=network-online.target bedroom-air.service
+
+[Service]
+DynamicUser=yes
+StateDirectory=bedroom-home
+StateDirectoryMode=0700
+UMask=0077
+ExecStart=/usr/local/bin/bedroom-air-history -homekit-state /var/lib/bedroom-home -sensor http://127.0.0.1:8080/api/live
+NoNewPrivileges=yes
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

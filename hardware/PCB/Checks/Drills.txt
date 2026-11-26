@@ -1,0 +1,26 @@
+Drill report for Bedroom-Air.kicad_pcb
+Created on 2026-11-26T22:21:43
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'Bedroom-Air-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.850mm  0.0335"  (4 holes))
+    T2  0.900mm  0.0354"  (2 holes))
+    T3  1.000mm  0.0394"  (52 holes))
+    T4  1.400mm  0.0551"  (9 holes))
+
+    Total plated holes count 67
+
+
+Drill file 'Bedroom-Air-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  3.200mm  0.1260"  (4 holes))
+
+    Total unplated holes count 4

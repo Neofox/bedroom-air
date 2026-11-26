@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="605" viewBox="0 0 1320 605"><title>How the bedroom CO₂ monitor connects</title><rect x="0" y="0" width="1320" height="605" rx="0" fill="#F6F6EF" stroke="none" stroke-width="2"/><text x="42" y="78" font-family="Helvetica Neue, Arial, sans-serif" font-size="55" font-weight="700" fill="#173B34" text-anchor="start">From bedroom air to your phone</text>
+<text x="42" y="122" font-family="Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="400" fill="#475F56" text-anchor="start">A local Wi-Fi dashboard with an optional path to Apple Home.</text>
+<path d="M42 153H1278" fill="none" stroke="#BDC9BE" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="42" y="197" width="310" height="217" rx="18" fill="#FFFFFA" stroke="#BDC9BE" stroke-width="2"/>
+<text x="64" y="237" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" fill="#196B56" text-anchor="start" letter-spacing="1.6">BEDROOM</text>
+<text x="64" y="284" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="700" fill="#173B34" text-anchor="start">ESP32-WROOM-32</text>
+<text x="64" y="330" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">MH-Z19C measures CO₂.</text>
+<text x="64" y="359" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">DHT22 reads temperature</text>
+<text x="64" y="388" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">and humidity.</text>
+<rect x="480" y="197" width="340" height="217" rx="18" fill="#FFFFFA" stroke="#BDC9BE" stroke-width="2"/>
+<text x="502" y="237" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" fill="#196B56" text-anchor="start" letter-spacing="1.6">ON YOUR NETWORK</text>
+<text x="502" y="284" font-family="Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="700" fill="#173B34" text-anchor="start">Raspberry Pi Zero 2 W</text>
+<text x="502" y="330" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">Logs a sample each minute</text>
+<text x="502" y="359" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">in SQLite on the microSD</text>
+<text x="502" y="388" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">and serves the dashboard.</text>
+<rect x="950" y="197" width="328" height="217" rx="18" fill="#FFFFFA" stroke="#BDC9BE" stroke-width="2"/>
+<text x="972" y="237" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" fill="#196B56" text-anchor="start" letter-spacing="1.6">ON YOUR PHONE</text>
+<text x="972" y="284" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="700" fill="#173B34" text-anchor="start">Safari</text>
+<text x="972" y="330" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">Shows the current readings</text>
+<text x="972" y="359" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">and overnight history</text>
+<text x="972" y="388" font-family="Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" fill="#475F56" text-anchor="start">on your home Wi-Fi.</text>
+<path d="M362 296H470m-9 -6l9 6 -9 6" fill="none" stroke="#196B56" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="416" y="275" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" fill="#196B56" text-anchor="middle">Wi-Fi</text>
+<path d="M830 296H940m-9 -6l9 6 -9 6" fill="none" stroke="#196B56" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="885" y="275" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" fill="#196B56" text-anchor="middle">Wi-Fi</text>
+<path d="M650 414V454" fill="none" stroke="#475F56" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 8"/>
+<path d="M644 445L650 454L656 445" fill="none" stroke="#475F56" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="480" y="451" width="798" height="118" rx="15" fill="#E9EFE5" stroke="#BDC9BE" stroke-width="2"/>
+<text x="502" y="483" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" fill="#196B56" text-anchor="start" letter-spacing="1.6">OPTIONAL  /  APPLE HOME</text>
+<text x="502" y="519" font-family="Helvetica Neue, Arial, sans-serif" font-size="25" font-weight="700" fill="#173B34" text-anchor="start">HomeKit service on the Pi</text>
+<text x="502" y="549" font-family="Helvetica Neue, Arial, sans-serif" font-size="21" font-weight="400" fill="#475F56" text-anchor="start">Pair Bedroom Air in the Home app with the code generated by your Pi.</text></svg>
