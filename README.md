@@ -32,6 +32,7 @@ The sensor and logging software ran on the breadboard prototype. The PCB and enc
 | --- | --- |
 | Arduino C++ sensor firmware, ESP32 web UI and bench sketches | [Firmware](firmware/) |
 | Go logger, SQLite storage, Safari dashboard, reports and HomeKit service | [Pi source](pi/) |
+| Ask Codex for current readings, recent trends, overnight CO₂ or inferred airing events | [Local MCP setup](mcp/) |
 | PCB layout, schematic, local footprints and check reports | [Editable KiCad project](hardware/PCB/) · [Schematic PDF](hardware/PCB/Bedroom-Air-schematic.pdf) |
 | Printable base, lid, sensor keeper, test gauge and parametric model | [Enclosure](hardware/Case/) |
 | Design generation, rendering and fit checks | [Hardware design tools](hardware/tools/) |
