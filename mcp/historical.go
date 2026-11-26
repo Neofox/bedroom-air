@@ -17,16 +17,20 @@ type historicalArgs struct {
 	Interval  *int   `json:"sampling_interval_minutes,omitempty" jsonschema:"Width of each interval in whole minutes (1–2880). Default 5; use 1 for the native logging cadence."`
 }
 
-// All series share one regular time axis so a full night fits in one tool result.
+type historicalPoint struct {
+	Time        string   `json:"t" jsonschema:"Inclusive start of this interval in RFC 3339 format."`
+	Count       int      `json:"n" jsonschema:"Number of archived rows, including rows with missing sensor values."`
+	CO2         *float64 `json:"co2" jsonschema:"Mean carbon dioxide concentration in ppm."`
+	Temperature *float64 `json:"temperature" jsonschema:"Mean temperature in degrees Celsius."`
+	Humidity    *float64 `json:"humidity" jsonschema:"Mean relative humidity in percent."`
+	Lux         *float64 `json:"lux" jsonschema:"Mean illuminance in lux."`
+}
+
 type historicalResult struct {
-	StartTime   string     `json:"start_time"`
-	EndTime     string     `json:"end_time" jsonschema:"Exclusive end of the final interval, which may be shorter."`
-	Interval    int        `json:"sampling_interval_minutes"`
-	SampleCount []int      `json:"sample_count" jsonschema:"Number of saved rows in each interval, including rows with a missing sensor value."`
-	CO2         []*float64 `json:"co2_ppm"`
-	Temperature []*float64 `json:"temperature_c"`
-	Humidity    []*float64 `json:"relative_humidity_percent"`
-	Lux         []*float64 `json:"light_lux"`
+	StartTime string            `json:"start_time"`
+	EndTime   string            `json:"end_time" jsonschema:"Exclusive end of the final interval, which may be shorter."`
+	Interval  int               `json:"sampling_interval_minutes"`
+	Readings  []historicalPoint `json:"readings" jsonschema:"Chronological, timestamped intervals. A null value means that sensor had no measurements."`
 }
 
 // Stored timestamps are integer seconds. Both bounds of [start, end) round up.
@@ -58,18 +62,18 @@ func (d dashboard) historical(ctx context.Context, _ *mcp.CallToolRequest, args 
 	n := int((span + step - 1) / step)
 	r := historicalResult{
 		StartTime: start.Format(time.RFC3339Nano), EndTime: end.Format(time.RFC3339Nano), Interval: minutes,
-		SampleCount: make([]int, n), CO2: make([]*float64, n), Temperature: make([]*float64, n),
-		Humidity: make([]*float64, n), Lux: make([]*float64, n),
+		Readings: make([]historicalPoint, n),
 	}
 	from, to := ceilUnix(start), ceilUnix(end)
-	if from == to {
-		return nil, r, nil
+	var rows []sample
+	if from < to {
+		var err error
+		rows, err = d.savedReadings(ctx, from, to)
+		if err != nil {
+			return nil, historicalResult{}, err
+		}
 	}
-	rows, err := d.savedReadings(ctx, from, to)
-	if err != nil {
-		return nil, historicalResult{}, err
-	}
-	for i := range n {
+	for i := range r.Readings {
 		// The dashboard delivers rows in ascending timestamp order.
 		stop := min(from+int64((i+1)*minutes)*60, to)
 		count := 0
@@ -77,11 +81,14 @@ func (d dashboard) historical(ctx context.Context, _ *mcp.CallToolRequest, args 
 			count++
 		}
 		bucket := rows[:count]
-		r.SampleCount[i] = count
-		r.CO2[i] = sensorMean(bucket, func(s sample) *int { return s.CO2 })
-		r.Temperature[i] = sensorMean(bucket, func(s sample) *float64 { return s.Temperature })
-		r.Humidity[i] = sensorMean(bucket, func(s sample) *float64 { return s.Humidity })
-		r.Lux[i] = sensorMean(bucket, func(s sample) *float64 { return s.Lux })
+		r.Readings[i] = historicalPoint{
+			Time:        start.Add(time.Duration(i) * step).Format(time.RFC3339Nano),
+			Count:       count,
+			CO2:         sensorMean(bucket, func(s sample) *int { return s.CO2 }),
+			Temperature: sensorMean(bucket, func(s sample) *float64 { return s.Temperature }),
+			Humidity:    sensorMean(bucket, func(s sample) *float64 { return s.Humidity }),
+			Lux:         sensorMean(bucket, func(s sample) *float64 { return s.Lux }),
+		}
 		rows = rows[count:]
 	}
 	return nil, r, nil

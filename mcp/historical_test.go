@@ -1,10 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
-	"slices"
 	"testing"
 )
 
@@ -24,14 +24,16 @@ func TestHistoricalCurve(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if r.Interval != 5 || r.StartTime != args.StartTime || r.EndTime != args.EndTime || !slices.Equal(r.SampleCount, []int{2, 0, 2}) {
-		t.Fatalf("wrong time axis or row counts: %+v", r)
+	if r.Interval != 5 || r.StartTime != args.StartTime || r.EndTime != args.EndTime {
+		t.Fatalf("wrong time range: %+v", r)
 	}
-	if len(r.CO2) != 3 || r.CO2[0] == nil || *r.CO2[0] != 850.5 || r.CO2[1] != nil || r.CO2[2] == nil || *r.CO2[2] != 1050 {
-		t.Error("unexpected CO₂ curve")
+	b, err := json.Marshal(r.Readings)
+	if err != nil {
+		t.Fatal(err)
 	}
-	if r.Lux[0] == nil || *r.Lux[0] != 0 || r.Lux[2] != nil || r.Temperature[2] == nil || *r.Temperature[2] != 0 || r.Humidity[0] != nil {
-		t.Error("available values, zero readings and missing measurements should be distinct")
+	const want = `[{"t":"1970-01-01T09:00:00.5+09:00","n":2,"co2":850.5,"temperature":21,"humidity":null,"lux":0},{"t":"1970-01-01T09:05:00.5+09:00","n":0,"co2":null,"temperature":null,"humidity":null,"lux":null},{"t":"1970-01-01T09:10:00.5+09:00","n":2,"co2":1050,"temperature":0,"humidity":null,"lux":null}]`
+	if string(b) != want {
+		t.Errorf("unexpected timestamped curve: %s", b)
 	}
 }
 
