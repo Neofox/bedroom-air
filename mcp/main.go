@@ -93,10 +93,15 @@ func (d dashboard) recent(ctx context.Context, _ *mcp.CallToolRequest, args hist
 	}
 	to := time.Now().Unix() + 1
 	from := to - int64(minutes)*60
-	r := historyResult{From: from, To: to, Samples: []sample{}}
+	samples, err := d.savedReadings(ctx, from, to)
+	return nil, historyResult{From: from, To: to, Samples: samples}, err
+}
+
+func (d dashboard) savedReadings(ctx context.Context, from, to int64) ([]sample, error) {
 	query := url.Values{"from": {strconv.FormatInt(from, 10)}, "to": {strconv.FormatInt(to, 10)}}
-	err := d.get(ctx, "history", query, &r.Samples)
-	return nil, r, err
+	rows := []sample{}
+	err := d.get(ctx, "history", query, &rows)
+	return rows, err
 }
 
 type nightArgs struct {
@@ -162,9 +167,10 @@ func main() {
 		log.Fatal("provide an http(s) dashboard base URL without credentials, query, or fragment")
 	}
 	d := dashboard{base, &http.Client{Timeout: 12 * time.Second, Transport: &http.Transport{}, CheckRedirect: func(*http.Request, []*http.Request) error { return http.ErrUseLastResponse }}}
-	server := mcp.NewServer(&mcp.Implementation{Name: "bedroom-air", Version: "1.0.0"}, nil)
+	server := mcp.NewServer(&mcp.Implementation{Name: "bedroom-air", Version: "1.1.0"}, nil)
 	mcp.AddTool(server, tool("get_home_status", "Read the bedroom sensor now. The timestamp is the Pi's poll time. A null measurement is unavailable."), d.live)
 	mcp.AddTool(server, tool("get_recent_readings", "Read saved one-minute bedroom samples. Times are Unix seconds; CO₂ is ppm, temperature °C, humidity %RH, light lux. Missing samples are gaps."), d.recent)
+	mcp.AddTool(server, tool("get_historical_readings", "Get a plot-ready bedroom air curve for an explicit time range of up to 48 hours. Index i of each array is start_time + i × sampling_interval_minutes. Each point is the mean of available observations in that interval; null means no measurement. Use a 1-minute interval for the most detail."), d.historical)
 	mcp.AddTool(server, tool("get_night_report", "Summarize a bedroom night (20:00–08:00 Pi local time). Peak is ppm; above and covered are observed seconds. Times are Unix seconds. Report coverage alongside results."), d.night)
 	mcp.AddTool(server, tool("get_airing_events", "List inferred airing events from CO₂ drops, with temperatures in °C and recovery when available. Times are Unix seconds, covered is seconds. No window sensor or energy meter is involved."), d.airing)
 	if err := server.Run(context.Background(), &mcp.StdioTransport{}); err != nil {
